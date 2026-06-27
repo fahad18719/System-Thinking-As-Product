@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Entanglement Scanner — Silicon & Soul</title>
+  <meta name="description" content="Measure how much of your energy is being consumed by inherited social contracts. A tool for self-awareness, not self-blame.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <span class="brand">Silicon &amp; Soul</span>
+      <span class="byline">by Fahad Najam</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <p class="eyebrow">Self-diagnostic tool</p>
+      <h1>You're not tired.<br>You're entangled.</h1>
+      <p class="hero-sub">Every person inherits invisible contracts — from family, culture, money, relationships. These contracts run in the background like unmonitored processes, consuming energy you think you're spending on life. This tool helps you see which layers are pulling hardest.</p>
+      <p class="hero-note">12 questions. 4 layers. Honest answers only. Nobody's watching.</p>
+    </section>
+
+    <div class="scanner-wrap" id="app">
+
+      <!-- Progress -->
+      <div class="progress-bar-wrap" id="progress-wrap">
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="progress-dots" id="progress-dots"></div>
+      </div>
+
+      <!-- Phase nav -->
+      <nav class="phase-nav" id="phase-nav" aria-label="Scanner sections"></nav>
+
+      <!-- Sections -->
+      <div id="sections-container"></div>
+
+      <!-- Nav buttons -->
+      <div class="nav-row" id="nav-row">
+        <button class="btn btn-ghost" id="btn-back" onclick="Scanner.go(-1)">← Back</button>
+        <button class="btn btn-primary" id="btn-next" onclick="Scanner.go(1)">Next →</button>
+      </div>
+
+    </div>
+
+    <!-- Results -->
+    <div class="result-wrap" id="result-section" hidden>
+      <p class="eyebrow">Your signal report</p>
+
+      <div class="score-ring-wrap">
+        <div class="score-ring" role="img" aria-label="Entanglement score ring">
+          <svg width="160" height="160" viewBox="0 0 160 160" aria-hidden="true">
+            <circle cx="80" cy="80" r="66" fill="none" stroke="#e8e6e0" stroke-width="10"/>
+            <circle cx="80" cy="80" r="66" fill="none" stroke="#1D9E75" stroke-width="10"
+              stroke-dasharray="414.7" stroke-dashoffset="414.7"
+              stroke-linecap="round" id="ring-arc"
+              style="transform: rotate(-90deg); transform-origin: 80px 80px; transition: stroke-dashoffset 1.2s ease;"/>
+          </svg>
+          <div class="score-center">
+            <span class="score-number" id="score-num">0</span>
+            <span class="score-unit">% entangled</span>
+          </div>
+        </div>
+        <h2 class="score-tier" id="score-tier"></h2>
+        <p class="score-desc" id="score-desc"></p>
+      </div>
+
+      <div class="freedom-section">
+        <div class="freedom-header">
+          <span>Available energy</span>
+          <span id="freedom-pct">0%</span>
+        </div>
+        <div class="freedom-track">
+          <div class="freedom-fill" id="freedom-fill" style="width:0%"></div>
+        </div>
+        <p class="freedom-note">Energy currently consumed by inherited contracts. This is recoverable.</p>
+      </div>
+
+      <div class="breakdown-section" id="breakdown"></div>
+
+      <div class="insight-grid" id="insight-cards"></div>
+
+      <blockquote class="closing-quote">
+        Every contract you can name is one you can stop running.<br>
+        The energy comes back. It was always yours.
+      </blockquote>
+
+      <div class="result-actions">
+        <button class="btn btn-ghost" onclick="Scanner.restart()">Run it again</button>
+        <button class="btn btn-primary" onclick="Scanner.share()">Share this tool ↗</button>
+      </div>
+
+      <p class="copyright">© 2026 Fahad Najam Consulting · Silicon &amp; Soul</p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Fahad Najam Consulting · <a href="https://fahad18719.github.io/fabric-wara" target="_blank" rel="noopener">Silicon &amp; Soul</a></p>
+    </div>
+  </footer>
+
+  <script src="js/questions.js"></script>
+  <script src="js/scanner.js"></script>
+
+</body>
+</html>
